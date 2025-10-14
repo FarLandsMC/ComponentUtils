@@ -293,7 +293,8 @@ public class ComponentUtils {
     /**
      * Create a single component from a list of {@link ComponentLike}s
      * <p>
-     * Separator: ", "<br> Final Separator: " and " * if the list is only two long, or ", and " if it's longer.
+     * Separator: ", "<br>
+     * Final Separator: " and " if the list is only two long, or ", and " if it's longer.
      *
      * @param list The list to use
      * @return The single joined component
@@ -305,24 +306,24 @@ public class ComponentUtils {
 
     /**
      * If {@code c} is a {@link TranslatableComponent}, Replace each arg that represents a player with the corresponding
-     * flp component, otherwise, return the provided component
+     * converted component, otherwise, return the provided component
      * <p>
      * Used for things like death messages and achievements
      */
-    @Contract(pure = true, value = "_ -> param1")
-    public static @Nullable Component convertPlayers(@Nullable Component c) {
+    @Contract(pure = true)
+    public static @Nullable Component convertPlayers(@Nullable Component c, Function<UUID, ? extends ComponentLike> converter) {
         if (c instanceof TranslatableComponent tc) {
-            return convertPlayers(tc);
+            return convertPlayers(tc, converter);
         }
         return c;
     }
 
     /**
-     * Replace each arg that represents a player in a {@link TranslatableComponent} with the corresponding flp component
+     * Replace each arg that represents a player in a {@link TranslatableComponent} with the corresponding converted component
      * <p>
      * Used for things like death messages and achievements
      */
-    @Contract(pure = true, value = "_ -> param1")
+    @Contract(pure = true)
     public static @NotNull TranslatableComponent convertPlayers(@NotNull TranslatableComponent c, Function<UUID, ? extends ComponentLike> converter) {
         return c.arguments(
             c.arguments()
