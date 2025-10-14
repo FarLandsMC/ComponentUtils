@@ -18,11 +18,13 @@ Get ComponentUtils from [JitPack](https://jitpack.io/#FarLandsMC/ComponentUtils/
 
 <!-- ... -->
 
-<dependency>
-    <groupId>com.github.FarLandsMC</groupId>
-    <artifactId>ComponentUtils</artifactId>
-    <version>main-SNAPSHOT</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>com.github.FarLandsMC</groupId>
+        <artifactId>ComponentUtils</artifactId>
+        <version>main-SNAPSHOT</version>
+    </dependency>
+</dependencies>
 ```
 
 Use it in your code:
