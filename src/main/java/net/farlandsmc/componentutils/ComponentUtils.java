@@ -325,8 +325,8 @@ public class ComponentUtils {
      */
     @Contract(pure = true)
     public static @NotNull TranslatableComponent convertPlayers(@NotNull TranslatableComponent c, Function<UUID, ? extends ComponentLike> converter) {
-        return c.arguments(
-            c.arguments()
+        return c.args(
+            c.args()
                 .stream()
                 .map(a -> {
                     HoverEvent<?> hover = a.asComponent().hoverEvent();
