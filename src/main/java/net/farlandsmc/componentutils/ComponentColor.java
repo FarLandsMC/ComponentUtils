@@ -1,6 +1,7 @@
 package net.farlandsmc.componentutils;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.Style;
 import net.kyori.adventure.text.format.TextColor;
 
 import org.bukkit.Color;
@@ -850,5 +851,49 @@ public class ComponentColor {
     @Contract(pure = true)
     public static Component color(String col, Component comp) {
         return Component.empty().append(comp).color(Utils.parseColor(col));
+    }
+
+    /**
+     * Generate a component with the specified style
+     *
+     * @param style  The style to use
+     * @param format The text to use for the format, uses {@link ComponentUtils#format}
+     * @param values The values to use for the format
+     */
+    @Contract(pure = true)
+    public static Component style(Style style, String format, Object... values) {
+        return format(format, values).style(style);
+    }
+
+    /**
+     * Generate a component with the style specified using {@link ComponentUtils#format} with the format of {@code {}}
+     *
+     * @param style The colour to use
+     * @param obj   The object to format
+     */
+    @Contract(pure = true)
+    public static Component style(Style style, Object obj) {
+        return style(style, "{}", obj);
+    }
+
+    /**
+     * Generate a component with the style provided
+     *
+     * @param style The style to use
+     * @param str   The string to use
+     */
+    @Contract(pure = true)
+    public static Component style(Style style, String str) {
+        return Component.text(str).style(style);
+    }
+
+    /**
+     * Wrap a component with the style provided
+     *
+     * @param comp The Component to wrap
+     */
+    @Contract(pure = true)
+    public static Component style(Style style, Component comp) {
+        return Component.empty().append(comp).style(style);
     }
 }
