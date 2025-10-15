@@ -43,7 +43,7 @@ class Utils {
      * @param e the enumeration element.
      * @return the formatted name of the given element as defined above.
      */
-    public static <E extends Enum<E>> String formattedName(Enum<E> e) {
+    public static String formattedName(Enum<?> e) {
         return e.name().replaceAll("_", "-").toLowerCase();
     }
 }

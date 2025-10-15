@@ -196,7 +196,6 @@ public class ComponentUtils {
         return base.hoverEvent(item.asHoverEvent());
     }
 
-
     /**
      * Create a component that displays an item on hover
      *
@@ -217,7 +216,18 @@ public class ComponentUtils {
      */
     @Contract(pure = true)
     public static Component item(ItemStack item) {
-        return item(ComponentColor.aqua(item.getAmount() > 1 ? item.getAmount() + " * " : "").append(item.displayName()), item);
+        return item(item, item.getAmount());
+    }
+
+    /**
+     * Create a component that displays an item on hover
+     *
+     * @param item The item to show
+     * @return Item Component
+     */
+    @Contract(pure = true)
+    public static Component item(ItemStack item, int count) {
+        return item(ComponentColor.aqua(count == 1 ? "" : count + " * ").append(item.displayName()), item);
     }
 
     /**
@@ -700,18 +710,16 @@ public class ComponentUtils {
     private static Component toComponent(@Nullable Object obj, @Nullable String fmt) {
         Component o;
         boolean brackets = fmt != null && fmt.startsWith("[") && fmt.endsWith("]");
-        if (obj instanceof ComponentLike c) {
+        if (obj instanceof FormattableComponent c) {
+            o = c.formattedComponent(fmt);
+        } else if (obj instanceof ComponentLike c) {
             o = c.asComponent();
-
         } else if (obj instanceof Enum<?> e) {
             o = Component.text(Utils.formattedName(e));
-
         } else if (obj instanceof ItemStack is) {
             o = item(is);
-
         } else if (obj instanceof Advancement adv) {
             o = ComponentUtils.advancement(adv);
-
         } else if (obj instanceof Translatable t) {
             if (fmt == null || fmt.isBlank()) {
                 o = Component.translatable(t);
