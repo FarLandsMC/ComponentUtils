@@ -17,7 +17,7 @@ import static net.kyori.adventure.text.format.NamedTextColor.*;
 
 public class ComponentColor {
 
-    // Note: Methods are annotated with `@Contract(pure = true)` so IDEs warn about unused results (same effect as @CheckReturnValue)
+    // Note: All methods are annotated with `@Contract(pure = true)` so IDEs warn about unused results (same effect as @CheckReturnValue)
 m4_define(`implColor', `
     /**
      * Generate a component with the colour of $1.
