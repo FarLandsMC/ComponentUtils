@@ -1,3 +1,7 @@
+
+// NOTE: This file is generated from ComponentColor.java.m4
+// Generate with `m4 -P src/main/java/net/farlandsmc/componentutils/ComponentColor.java.m4 > src/main/java/net/farlandsmc/componentutils/ComponentColor.java`
+
 package net.farlandsmc.componentutils;
 
 import net.kyori.adventure.text.Component;
@@ -67,8 +71,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_BLUE using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_BLUE using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -109,8 +112,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_GREEN using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_GREEN using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -151,8 +153,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_AQUA using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_AQUA using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -193,8 +194,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_RED using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_RED using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -235,8 +235,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_PURPLE using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_PURPLE using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -359,8 +358,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of DARK_GRAY using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of DARK_GRAY using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
@@ -565,8 +563,7 @@ public class ComponentColor {
     }
 
     /**
-     * Generate a component with the colour of LIGHT_PURPLE using {@link ComponentUtils#format} with the format of
-     * {@code {}}
+     * Generate a component with the colour of LIGHT_PURPLE using {@link ComponentUtils#format} with the format of {@code {}}
      *
      * @param obj The object to format
      */
