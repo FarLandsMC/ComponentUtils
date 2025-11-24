@@ -16,4 +16,12 @@ jobs:
       run: m4 -P src/main/java/net/farlandsmc/componentutils/ComponentColor.java.m4 > src/main/java/net/farlandsmc/componentutils/ComponentColor.java
 
     - name: check diff
-      run: git diff --quiet -- src/main/java/net/farlandsmc/componentutils/ComponentColor.java
+      run: |
+        git diff --quiet -- src/main/java/net/farlandsmc/componentutils/ComponentColor.java
+        local status=$?
+        if [ status -ne 0 ]; then
+            echo '::error file=src/main/java/net/farlandsmc/componentutils/ComponentColor.java,title=Update ComponentColor.java::ComponentColor.java is out of date with ComponentColor.java.m4!  Update it with m4 -P src/main/java/net/farlandsmc/componentutils/ComponentColor.java.m4 > src/main/java/net/farlandsmc/componentutils/ComponentColor.java.'
+            exit $status
+        else
+            echo 'No diff'
+        fi
