@@ -17,6 +17,7 @@ jobs:
 
     - name: check diff
       run: |
+        set +e
         git diff --quiet -- src/main/java/net/farlandsmc/componentutils/ComponentColor.java
         local status=$?
         if [ status -ne 0 ]; then
